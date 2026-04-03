@@ -1,0 +1,6 @@
+env/
+*.java
+*.class
+source/__pycache__
+generated/
+guiView/
