@@ -8,8 +8,9 @@ Small ANTLR + Python example project for parsing a simple expression grammar.
 - Java
 - ANTLR 4 command-line tools available as `antlr4` and `grun`
 
-If `antlr4` / `grun` aliases are not created follow these instructions:
+First follow the instructions for the `ANTLR4` Java tool at
 [antlr4 repo instructions](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
+You can find the installation instructions under the part `Installation`.
 
 ## Create and activate the virtual environment
 
@@ -36,7 +37,8 @@ pip install -r requirements.txt
 The Python code imports generated files from the `generated/` directory, so regenerate ANTLR output there when the grammar changes:
 
 ```bash
-cd grammar && antlr4 Expr.g4 -Dlanguage=Python3 -visitor -o ../generated 
+cd grammar
+antlr4 Expr.g4 -Dlanguage=Python3 -visitor -o ../generated 
 ```
 
 This generates files such as:

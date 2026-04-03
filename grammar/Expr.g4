@@ -1,18 +1,24 @@
 grammar Expr;
 
 program
-    :  expr EOF
+    :  (expr SEMI)+ EOF
     ;
 
-expr
-    :  term OP term SEMI
-    ;
+expr: addExpr;
+
+addExpr: mulExpr (ADDOP mulExpr)*;
+
+mulExpr: parExpr (MULOP parExpr)*;
+
+parExpr: '(' expr ')' | term;
 
 term: INT;
 
 SEMI: ';';
 
-OP: '+';
+ADDOP: '+' | '-';
+
+MULOP: '*' | '/';
 
 INT
     : [0-9]+

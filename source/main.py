@@ -11,6 +11,7 @@ def main():
     lexer = ExprLexer(query)
     stream = CommonTokenStream(lexer)
     parser = ExprParser(stream)
+    
     tree = parser.program()
 
     if parser.getNumberOfSyntaxErrors() > 0:
@@ -22,6 +23,7 @@ def main():
 
     visitor = Visitor()
 
-    tree.accept(visitor)
+    res = tree.accept(visitor)
+    print(res)
 
 main()
