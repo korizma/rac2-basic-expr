@@ -36,7 +36,7 @@ pip install -r requirements.txt
 The Python code imports generated files from the `generated/` directory, so regenerate ANTLR output there when the grammar changes:
 
 ```bash
-cd grammar && antlr4 grammar/Expr.g4 -Dlanguage=Python3 -visitor -o ../generated 
+cd grammar && antlr4 Expr.g4 -Dlanguage=Python3 -visitor -o ../generated 
 ```
 
 This generates files such as:
